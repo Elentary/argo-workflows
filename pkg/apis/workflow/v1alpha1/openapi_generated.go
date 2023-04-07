@@ -5036,6 +5036,13 @@ func schema_pkg_apis_workflow_v1alpha1_S3Artifact(ref common.ReferenceCallback) 
 							Ref: ref("github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1.S3EncryptionOptions"),
 						},
 					},
+					"addressingStyle": {
+						SchemaProps: spec.SchemaProps{
+							Description: "AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style)",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"key": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Key is the key in the bucket where the artifact resides",
@@ -5121,6 +5128,13 @@ func schema_pkg_apis_workflow_v1alpha1_S3ArtifactRepository(ref common.Reference
 					"encryptionOptions": {
 						SchemaProps: spec.SchemaProps{
 							Ref: ref("github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1.S3EncryptionOptions"),
+						},
+					},
+					"addressingStyle": {
+						SchemaProps: spec.SchemaProps{
+							Description: "AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style)",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"keyFormat": {
@@ -5215,6 +5229,13 @@ func schema_pkg_apis_workflow_v1alpha1_S3Bucket(ref common.ReferenceCallback) co
 					"encryptionOptions": {
 						SchemaProps: spec.SchemaProps{
 							Ref: ref("github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1.S3EncryptionOptions"),
+						},
+					},
+					"addressingStyle": {
+						SchemaProps: spec.SchemaProps{
+							Description: "AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style)",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 				},

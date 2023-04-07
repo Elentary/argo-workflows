@@ -6023,6 +6023,10 @@
           "$ref": "#/definitions/io.k8s.api.core.v1.SecretKeySelector",
           "description": "AccessKeySecret is the secret selector to the bucket's access key"
         },
+        "addressingStyle": {
+          "description": "AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style)",
+          "type": "string"
+        },
         "bucket": {
           "description": "Bucket is the name of the bucket",
           "type": "string"
@@ -6071,6 +6075,10 @@
         "accessKeySecret": {
           "$ref": "#/definitions/io.k8s.api.core.v1.SecretKeySelector",
           "description": "AccessKeySecret is the secret selector to the bucket's access key"
+        },
+        "addressingStyle": {
+          "description": "AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style)",
+          "type": "string"
         },
         "bucket": {
           "description": "Bucket is the name of the bucket",

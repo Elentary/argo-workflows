@@ -92,6 +92,7 @@ class IoArgoprojWorkflowV1alpha1S3ArtifactRepository(ModelNormal):
         lazy_import()
         return {
             'access_key_secret': (SecretKeySelector,),  # noqa: E501
+            'addressing_style': (str,),  # noqa: E501
             'bucket': (str,),  # noqa: E501
             'create_bucket_if_not_present': (IoArgoprojWorkflowV1alpha1CreateS3BucketOptions,),  # noqa: E501
             'encryption_options': (IoArgoprojWorkflowV1alpha1S3EncryptionOptions,),  # noqa: E501
@@ -112,6 +113,7 @@ class IoArgoprojWorkflowV1alpha1S3ArtifactRepository(ModelNormal):
 
     attribute_map = {
         'access_key_secret': 'accessKeySecret',  # noqa: E501
+        'addressing_style': 'addressingStyle',  # noqa: E501
         'bucket': 'bucket',  # noqa: E501
         'create_bucket_if_not_present': 'createBucketIfNotPresent',  # noqa: E501
         'encryption_options': 'encryptionOptions',  # noqa: E501
@@ -167,6 +169,7 @@ class IoArgoprojWorkflowV1alpha1S3ArtifactRepository(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             access_key_secret (SecretKeySelector): [optional]  # noqa: E501
+            addressing_style (str): AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style). [optional]  # noqa: E501
             bucket (str): Bucket is the name of the bucket. [optional]  # noqa: E501
             create_bucket_if_not_present (IoArgoprojWorkflowV1alpha1CreateS3BucketOptions): [optional]  # noqa: E501
             encryption_options (IoArgoprojWorkflowV1alpha1S3EncryptionOptions): [optional]  # noqa: E501
@@ -260,6 +263,7 @@ class IoArgoprojWorkflowV1alpha1S3ArtifactRepository(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             access_key_secret (SecretKeySelector): [optional]  # noqa: E501
+            addressing_style (str): AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style). [optional]  # noqa: E501
             bucket (str): Bucket is the name of the bucket. [optional]  # noqa: E501
             create_bucket_if_not_present (IoArgoprojWorkflowV1alpha1CreateS3BucketOptions): [optional]  # noqa: E501
             encryption_options (IoArgoprojWorkflowV1alpha1S3EncryptionOptions): [optional]  # noqa: E501

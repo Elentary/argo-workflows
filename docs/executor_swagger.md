@@ -3770,6 +3770,7 @@ be retried and the retry strategy will be ignored |  |
 | Name | Type | Go type | Required | Default | Description | Example |
 |------|------|---------|:--------:| ------- |-------------|---------|
 | accessKeySecret | [SecretKeySelector](#secret-key-selector)| `SecretKeySelector` |  | |  |  |
+| addressingStyle | string| `string` |  | | AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style) |  |
 | bucket | string| `string` |  | | Bucket is the name of the bucket |  |
 | createBucketIfNotPresent | [CreateS3BucketOptions](#create-s3-bucket-options)| `CreateS3BucketOptions` |  | |  |  |
 | encryptionOptions | [S3EncryptionOptions](#s3-encryption-options)| `S3EncryptionOptions` |  | |  |  |

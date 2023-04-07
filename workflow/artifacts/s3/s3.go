@@ -24,6 +24,7 @@ import (
 // ArtifactDriver is a driver for AWS S3
 type ArtifactDriver struct {
 	Endpoint              string
+	AddressingStyle       string
 	Region                string
 	Secure                bool
 	AccessKey             string
@@ -39,17 +40,30 @@ type ArtifactDriver struct {
 
 var _ artifactscommon.ArtifactDriver = &ArtifactDriver{}
 
+var (
+	addressingStyleMap = map[string]argos3.AddressingStyle{
+		"auto":    argos3.AutoDetectStyle,
+		"path":    argos3.PathStyle,
+		"virtual": argos3.VirtualHostedStyle,
+	}
+)
+
 // newMinioClient instantiates a new minio client object.
 func (s3Driver *ArtifactDriver) newS3Client(ctx context.Context) (argos3.S3Client, error) {
+	addressingStyle, ok := addressingStyleMap[s3Driver.AddressingStyle]
+	if !ok {
+		return nil, fmt.Errorf("failed to parse S3 addressing style: %s", s3Driver.AddressingStyle)
+	}
 	opts := argos3.S3ClientOpts{
-		Endpoint:    s3Driver.Endpoint,
-		Region:      s3Driver.Region,
-		Secure:      s3Driver.Secure,
-		AccessKey:   s3Driver.AccessKey,
-		SecretKey:   s3Driver.SecretKey,
-		RoleARN:     s3Driver.RoleARN,
-		Trace:       os.Getenv(common.EnvVarArgoTrace) == "1",
-		UseSDKCreds: s3Driver.UseSDKCreds,
+		Endpoint:        s3Driver.Endpoint,
+		AddressingStyle: addressingStyle,
+		Region:          s3Driver.Region,
+		Secure:          s3Driver.Secure,
+		AccessKey:       s3Driver.AccessKey,
+		SecretKey:       s3Driver.SecretKey,
+		RoleARN:         s3Driver.RoleARN,
+		Trace:           os.Getenv(common.EnvVarArgoTrace) == "1",
+		UseSDKCreds:     s3Driver.UseSDKCreds,
 		EncryptOpts: argos3.EncryptOpts{
 			KmsKeyId:              s3Driver.KmsKeyId,
 			KmsEncryptionContext:  s3Driver.KmsEncryptionContext,
