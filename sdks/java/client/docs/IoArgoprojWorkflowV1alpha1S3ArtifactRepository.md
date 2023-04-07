@@ -9,6 +9,7 @@ S3ArtifactRepository defines the controller configuration for an S3 artifact rep
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessKeySecret** | [**io.kubernetes.client.openapi.models.V1SecretKeySelector**](io.kubernetes.client.openapi.models.V1SecretKeySelector.md) |  |  [optional]
+**addressingStyle** | **String** | AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style) |  [optional]
 **bucket** | **String** | Bucket is the name of the bucket |  [optional]
 **createBucketIfNotPresent** | [**IoArgoprojWorkflowV1alpha1CreateS3BucketOptions**](IoArgoprojWorkflowV1alpha1CreateS3BucketOptions.md) |  |  [optional]
 **encryptionOptions** | [**IoArgoprojWorkflowV1alpha1S3EncryptionOptions**](IoArgoprojWorkflowV1alpha1S3EncryptionOptions.md) |  |  [optional]

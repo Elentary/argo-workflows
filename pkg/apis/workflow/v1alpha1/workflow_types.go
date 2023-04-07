@@ -2370,6 +2370,9 @@ type S3Bucket struct {
 	CreateBucketIfNotPresent *CreateS3BucketOptions `json:"createBucketIfNotPresent,omitempty" protobuf:"bytes,9,opt,name=createBucketIfNotPresent"`
 
 	EncryptionOptions *S3EncryptionOptions `json:"encryptionOptions,omitempty" protobuf:"bytes,10,opt,name=encryptionOptions"`
+
+	// AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style)
+	AddressingStyle string `json:"addressingStyle,omitempty" protobuf:"bytes,11,opt,name=addressingStyle"`
 }
 
 // S3EncryptionOptions used to determine encryption options during s3 operations

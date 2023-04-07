@@ -837,6 +837,8 @@ spec:
                               required:
                               - key
                               type: object
+                            addressingStyle:
+                              type: string
                             bucket:
                               type: string
                             createBucketIfNotPresent:
@@ -1449,6 +1451,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -2610,6 +2614,8 @@ spec:
                             required:
                             - key
                             type: object
+                          addressingStyle:
+                            type: string
                           bucket:
                             type: string
                           createBucketIfNotPresent:
@@ -4325,6 +4331,8 @@ spec:
                                             required:
                                             - key
                                             type: object
+                                          addressingStyle:
+                                            type: string
                                           bucket:
                                             type: string
                                           createBucketIfNotPresent:
@@ -4887,6 +4895,8 @@ spec:
                                                   required:
                                                   - key
                                                   type: object
+                                                addressingStyle:
+                                                  type: string
                                                 bucket:
                                                   type: string
                                                 createBucketIfNotPresent:
@@ -5500,6 +5510,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -6663,6 +6675,8 @@ spec:
                                   required:
                                   - key
                                   type: object
+                                addressingStyle:
+                                  type: string
                                 bucket:
                                   type: string
                                 createBucketIfNotPresent:
@@ -7313,6 +7327,8 @@ spec:
                                   required:
                                   - key
                                   type: object
+                                addressingStyle:
+                                  type: string
                                 bucket:
                                   type: string
                                 createBucketIfNotPresent:
@@ -7886,6 +7902,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -10699,6 +10717,8 @@ spec:
                               required:
                               - key
                               type: object
+                            addressingStyle:
+                              type: string
                             bucket:
                               type: string
                             createBucketIfNotPresent:
@@ -12414,6 +12434,8 @@ spec:
                                               required:
                                               - key
                                               type: object
+                                            addressingStyle:
+                                              type: string
                                             bucket:
                                               type: string
                                             createBucketIfNotPresent:
@@ -12976,6 +12998,8 @@ spec:
                                                     required:
                                                     - key
                                                     type: object
+                                                  addressingStyle:
+                                                    type: string
                                                   bucket:
                                                     type: string
                                                   createBucketIfNotPresent:
@@ -13589,6 +13613,8 @@ spec:
                                       required:
                                       - key
                                       type: object
+                                    addressingStyle:
+                                      type: string
                                     bucket:
                                       type: string
                                     createBucketIfNotPresent:
@@ -14752,6 +14778,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -15402,6 +15430,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -15975,6 +16005,8 @@ spec:
                                       required:
                                       - key
                                       type: object
+                                    addressingStyle:
+                                      type: string
                                     bucket:
                                       type: string
                                     createBucketIfNotPresent:
@@ -19128,6 +19160,8 @@ spec:
                             required:
                             - key
                             type: object
+                          addressingStyle:
+                            type: string
                           bucket:
                             type: string
                           createBucketIfNotPresent:
@@ -19670,6 +19704,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -20237,6 +20273,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -20829,6 +20867,8 @@ spec:
                               required:
                               - key
                               type: object
+                            addressingStyle:
+                              type: string
                             bucket:
                               type: string
                             createBucketIfNotPresent:
@@ -22375,6 +22415,8 @@ spec:
                               required:
                               - key
                               type: object
+                            addressingStyle:
+                              type: string
                             bucket:
                               type: string
                             createBucketIfNotPresent:
@@ -24090,6 +24132,8 @@ spec:
                                               required:
                                               - key
                                               type: object
+                                            addressingStyle:
+                                              type: string
                                             bucket:
                                               type: string
                                             createBucketIfNotPresent:
@@ -24652,6 +24696,8 @@ spec:
                                                     required:
                                                     - key
                                                     type: object
+                                                  addressingStyle:
+                                                    type: string
                                                   bucket:
                                                     type: string
                                                   createBucketIfNotPresent:
@@ -25265,6 +25311,8 @@ spec:
                                       required:
                                       - key
                                       type: object
+                                    addressingStyle:
+                                      type: string
                                     bucket:
                                       type: string
                                     createBucketIfNotPresent:
@@ -26428,6 +26476,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -27078,6 +27128,8 @@ spec:
                                     required:
                                     - key
                                     type: object
+                                  addressingStyle:
+                                    type: string
                                   bucket:
                                     type: string
                                   createBucketIfNotPresent:
@@ -27651,6 +27703,8 @@ spec:
                                       required:
                                       - key
                                       type: object
+                                    addressingStyle:
+                                      type: string
                                     bucket:
                                       type: string
                                     createBucketIfNotPresent:
@@ -30522,6 +30576,8 @@ spec:
                                   required:
                                   - key
                                   type: object
+                                addressingStyle:
+                                  type: string
                                 bucket:
                                   type: string
                                 createBucketIfNotPresent:
@@ -31134,6 +31190,8 @@ spec:
                                         required:
                                         - key
                                         type: object
+                                      addressingStyle:
+                                        type: string
                                       bucket:
                                         type: string
                                       createBucketIfNotPresent:
@@ -32295,6 +32353,8 @@ spec:
                                 required:
                                 - key
                                 type: object
+                              addressingStyle:
+                                type: string
                               bucket:
                                 type: string
                               createBucketIfNotPresent:
@@ -34010,6 +34070,8 @@ spec:
                                                 required:
                                                 - key
                                                 type: object
+                                              addressingStyle:
+                                                type: string
                                               bucket:
                                                 type: string
                                               createBucketIfNotPresent:
@@ -34572,6 +34634,8 @@ spec:
                                                       required:
                                                       - key
                                                       type: object
+                                                    addressingStyle:
+                                                      type: string
                                                     bucket:
                                                       type: string
                                                     createBucketIfNotPresent:
@@ -35185,6 +35249,8 @@ spec:
                                         required:
                                         - key
                                         type: object
+                                      addressingStyle:
+                                        type: string
                                       bucket:
                                         type: string
                                       createBucketIfNotPresent:
@@ -36348,6 +36414,8 @@ spec:
                                       required:
                                       - key
                                       type: object
+                                    addressingStyle:
+                                      type: string
                                     bucket:
                                       type: string
                                     createBucketIfNotPresent:
@@ -36998,6 +37066,8 @@ spec:
                                       required:
                                       - key
                                       type: object
+                                    addressingStyle:
+                                      type: string
                                     bucket:
                                       type: string
                                     createBucketIfNotPresent:
@@ -37571,6 +37641,8 @@ spec:
                                         required:
                                         - key
                                         type: object
+                                      addressingStyle:
+                                        type: string
                                       bucket:
                                         type: string
                                       createBucketIfNotPresent:
@@ -40384,6 +40456,8 @@ spec:
                                   required:
                                   - key
                                   type: object
+                                addressingStyle:
+                                  type: string
                                 bucket:
                                   type: string
                                 createBucketIfNotPresent:
@@ -42099,6 +42173,8 @@ spec:
                                                   required:
                                                   - key
                                                   type: object
+                                                addressingStyle:
+                                                  type: string
                                                 bucket:
                                                   type: string
                                                 createBucketIfNotPresent:
@@ -42661,6 +42737,8 @@ spec:
                                                         required:
                                                         - key
                                                         type: object
+                                                      addressingStyle:
+                                                        type: string
                                                       bucket:
                                                         type: string
                                                       createBucketIfNotPresent:
@@ -43274,6 +43352,8 @@ spec:
                                           required:
                                           - key
                                           type: object
+                                        addressingStyle:
+                                          type: string
                                         bucket:
                                           type: string
                                         createBucketIfNotPresent:
@@ -44437,6 +44517,8 @@ spec:
                                         required:
                                         - key
                                         type: object
+                                      addressingStyle:
+                                        type: string
                                       bucket:
                                         type: string
                                       createBucketIfNotPresent:
@@ -45087,6 +45169,8 @@ spec:
                                         required:
                                         - key
                                         type: object
+                                      addressingStyle:
+                                        type: string
                                       bucket:
                                         type: string
                                       createBucketIfNotPresent:
@@ -45660,6 +45744,8 @@ spec:
                                           required:
                                           - key
                                           type: object
+                                        addressingStyle:
+                                          type: string
                                         bucket:
                                           type: string
                                         createBucketIfNotPresent:

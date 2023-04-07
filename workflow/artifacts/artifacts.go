@@ -74,6 +74,7 @@ func newDriver(ctx context.Context, art *wfv1.Artifact, ri resource.Interface) (
 
 		driver := s3.ArtifactDriver{
 			Endpoint:              art.S3.Endpoint,
+			AddressingStyle:       art.S3.AddressingStyle,
 			AccessKey:             accessKey,
 			SecretKey:             secretKey,
 			Secure:                art.S3.Insecure == nil || !*art.S3.Insecure,

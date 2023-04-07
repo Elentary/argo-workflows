@@ -6,6 +6,7 @@ S3Artifact is the location of an S3 artifact
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_key_secret** | [**SecretKeySelector**](SecretKeySelector.md) |  | [optional] 
+**addressing_style** | **str** | AddressingStyle is a type of bucket addressing (path-style or virtual-hosted-style) | [optional] 
 **bucket** | **str** | Bucket is the name of the bucket | [optional] 
 **create_bucket_if_not_present** | [**IoArgoprojWorkflowV1alpha1CreateS3BucketOptions**](IoArgoprojWorkflowV1alpha1CreateS3BucketOptions.md) |  | [optional] 
 **encryption_options** | [**IoArgoprojWorkflowV1alpha1S3EncryptionOptions**](IoArgoprojWorkflowV1alpha1S3EncryptionOptions.md) |  | [optional] 
