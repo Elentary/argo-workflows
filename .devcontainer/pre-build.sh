@@ -1,19 +1,20 @@
 #!/usr/bin/env sh
 set -eux
 
-# install kubernetes
-wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
-k3d cluster get k3s-default || k3d cluster create --wait
-k3d kubeconfig merge --kubeconfig-merge-default
+# install protoc
+curl -Lo protoc.zip https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip \
+    && unzip -o protoc.zip -d /usr/local bin/protoc \
+    && unzip -o protoc.zip -d /usr/local 'include/*' \
+    && rm -f protoc.zip \
+    && chmod 755 /usr/local/bin/protoc \
+    && chmod -R 755 /usr/local/include/ 
 
-# install kubectl
-curl -LO https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
-kubectl cluster-info
 
 # install kit
 curl -q https://raw.githubusercontent.com/kitproj/kit/main/install.sh | sh
 
-# download dependencies and do first-pass compile
+pwd
+ls
+
+# do time consuming tasks, e.g. download deps and initial build
 CI=1 kit pre-up
