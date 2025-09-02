@@ -48,11 +48,13 @@ export function processURL(urlExpression: string, jsonObject: any) {
     });
 }
 
-export function openLinkWithKey(url: string, target?: string) {
+export function openLinkWithKey(url: string, target?: string, openInNewTabByDefault?: boolean) {
     if ((window.event as MouseEvent).ctrlKey || (window.event as MouseEvent).metaKey) {
         window.open(url, '_blank');
-    } else if (target !== `''`) {
+    } else if (target && target !== `''`) {
         window.open(url, target);
+    } else if (openInNewTabByDefault) {
+        window.open(url, '_blank');
     } else {
         document.location.href = url;
     }
@@ -60,12 +62,15 @@ export function openLinkWithKey(url: string, target?: string) {
 
 export function Links({scope, object, button}: {scope: string; object: {metadata: ObjectMeta; workflow?: Workflow; status?: any}; button?: boolean}) {
     const [links, setLinks] = useState<Link[]>();
+    const [linksOpenInNewTab, setLinksOpenInNewTab] = useState<boolean>(false);
     const [error, setError] = useState<Error>();
     useEffect(() => {
         services.info
             .getInfo()
-            .then(x => (x.links || []).filter(y => y.scope === scope))
-            .then(setLinks)
+            .then(x => {
+                setLinks((x.links || []).filter(y => y.scope === scope));
+                setLinksOpenInNewTab(x.linksOpenInNewTab || false);
+            })
             .catch(setError);
     }, []);
 
@@ -76,13 +81,15 @@ export function Links({scope, object, button}: {scope: string; object: {metadata
                 links.map(({url, name, target}) => {
                     if (button) {
                         return (
-                            <Button onClick={() => openLinkWithKey(processURL(url, object), target)} key={name} icon='external-link-alt'>
+                            <Button onClick={() => openLinkWithKey(processURL(url, object), target, linksOpenInNewTab)} key={name} icon='external-link-alt'>
                                 {name}
                             </Button>
                         );
                     }
+                    const processedUrl = processURL(url, object);
+                    const effectiveTarget = target || (linksOpenInNewTab ? '_blank' : undefined);
                     return (
-                        <a key={name} href={processURL(url, object)} target={target} rel='noreferrer'>
+                        <a key={name} href={processedUrl} target={effectiveTarget} rel='noreferrer'>
                             {name} <i className='fa fa-external-link-alt' />
                         </a>
                     );
