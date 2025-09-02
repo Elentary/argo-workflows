@@ -9,7 +9,7 @@ describe('Links component', () => {
     const mockLink: Link = {
         name: 'Test Link',
         scope: 'test',
-        url: 'http://test.com'
+        url: 'http://test.net'
     };
 
     const mockObject: {metadata: ObjectMeta} = {
