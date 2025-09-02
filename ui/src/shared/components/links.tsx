@@ -51,7 +51,7 @@ export function processURL(urlExpression: string, jsonObject: any) {
 export function openLinkWithKey(url: string, target?: string) {
     if ((window.event as MouseEvent).ctrlKey || (window.event as MouseEvent).metaKey) {
         window.open(url, '_blank');
-    } else if (target !== `''`) {
+    } else if (target) {
         window.open(url, target);
     } else {
         document.location.href = url;
@@ -73,16 +73,17 @@ export function Links({scope, object, button}: {scope: string; object: {metadata
         <>
             {error && error.message}
             {links &&
-                links.map(({url, name, target}) => {
+                links.map(({url, name, target, openInNewTab}) => {
+                    const finalTarget = openInNewTab === false ? target : '_blank';
                     if (button) {
                         return (
-                            <Button onClick={() => openLinkWithKey(processURL(url, object), target)} key={name} icon='external-link-alt'>
+                            <Button onClick={() => openLinkWithKey(processURL(url, object), finalTarget)} key={name} icon='external-link-alt'>
                                 {name}
                             </Button>
                         );
                     }
                     return (
-                        <a key={name} href={processURL(url, object)} target={target} rel='noreferrer'>
+                        <a key={name} href={processURL(url, object)} target={finalTarget} rel='noreferrer'>
                             {name} <i className='fa fa-external-link-alt' />
                         </a>
                     );

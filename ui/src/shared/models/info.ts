@@ -3,6 +3,7 @@ export interface Link {
     scope: string;
     url: string;
     target?: string;
+    openInNewTab?: boolean;
 }
 
 export interface Column {
