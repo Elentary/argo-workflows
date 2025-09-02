@@ -74,6 +74,8 @@ type InfoResponse struct {
 	Modals               map[string]bool    `protobuf:"bytes,3,rep,name=modals,proto3" json:"modals,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3"`
 	NavColor             string             `protobuf:"bytes,4,opt,name=navColor,proto3" json:"navColor,omitempty"`
 	Columns              []*v1alpha1.Column `protobuf:"bytes,5,rep,name=columns,proto3" json:"columns,omitempty"`
+	// whether links should open in new tab by default
+	LinksOpenInNewTab    bool               `protobuf:"varint,6,opt,name=linksOpenInNewTab,proto3" json:"linksOpenInNewTab,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -145,6 +147,13 @@ func (m *InfoResponse) GetColumns() []*v1alpha1.Column {
 		return m.Columns
 	}
 	return nil
+}
+
+func (m *InfoResponse) GetLinksOpenInNewTab() bool {
+	if m != nil {
+		return m.LinksOpenInNewTab
+	}
+	return false
 }
 
 type GetVersionRequest struct {
@@ -727,6 +736,16 @@ func (m *InfoResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x2a
 		}
 	}
+	if m.LinksOpenInNewTab {
+		i--
+		if m.LinksOpenInNewTab {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x30
+	}
 	if len(m.NavColor) > 0 {
 		i -= len(m.NavColor)
 		copy(dAtA[i:], m.NavColor)
@@ -1039,6 +1058,9 @@ func (m *InfoResponse) Size() (n int) {
 			l = e.Size()
 			n += 1 + l + sovInfo(uint64(l))
 		}
+	}
+	if m.LinksOpenInNewTab {
+		n += 2
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -1476,6 +1498,26 @@ func (m *InfoResponse) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		case 6:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LinksOpenInNewTab", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowInfo
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.LinksOpenInNewTab = bool(v != 0)
 		default:
 			iNdEx = preIndex
 			skippy, err := skipInfo(dAtA[iNdEx:])

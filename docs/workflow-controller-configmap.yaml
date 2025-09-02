@@ -102,6 +102,9 @@ data:
   # uncomment following lines if you want to change navigation bar background color
   # navColor: red
 
+  # uncomment following line if you want external links to open in new tabs by default
+  # linksOpenInNewTab: true
+
   # artifactRepository defines the default location to be used as the artifact repository for
   # container artifacts.
   artifactRepository: |

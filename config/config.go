@@ -113,6 +113,9 @@ type Config struct {
 	// NavColor is an ui navigation bar background color
 	NavColor string `json:"navColor,omitempty"`
 
+	// LinksOpenInNewTab configures whether external links should open in new tabs by default
+	LinksOpenInNewTab bool `json:"linksOpenInNewTab,omitempty"`
+
 	// SSO in settings for single-sign on
 	SSO SSOConfig `json:"sso,omitempty"`
 
